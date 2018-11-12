@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package nulls;
+
+import "proto/timestamp.proto";
+
+message String {
+    string String = 1;
+    bool Valid = 2;
+}
+
+message Bool {
+    bool Bool = 1;
+    bool Valid = 2;
+}
+
+message Int {
+    int32 Int = 1;
+    bool Valid = 2;
+}
+
+message Time {
+    google.protobuf.Timestamp Time = 1;
+    bool Valid = 2;
+}
