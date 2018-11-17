@@ -2,7 +2,9 @@ syntax = "proto3";
 
 package nulls;
 
-import "proto/timestamp.proto";
+import "github.com/golang/protobuf/ptypes/timestamp/timestamp.proto";
+
+option go_package = "github.com/Aarabika/ptypes";
 
 message String {
     string String = 1;
