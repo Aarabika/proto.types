@@ -6,23 +6,23 @@ import (
 	st "github.com/golang/protobuf/ptypes/struct"
 )
 
-// ToStruct converts a map[string]interface{} to a ptypes.Struct
-func ToStruct(v map[string]interface{}) *st.Struct {
+// StructProto converts a map[string]interface{} to a ptypes.Struct
+func StructProto(v map[string]interface{}) *st.Struct {
 	size := len(v)
 	if size == 0 {
 		return nil
 	}
 	fields := make(map[string]*st.Value, size)
 	for k, v := range v {
-		fields[k] = ToValue(v)
+		fields[k] = ValueProto(v)
 	}
 	return &st.Struct{
 		Fields: fields,
 	}
 }
 
-// ToValue converts an interface{} to a ptypes.Value
-func ToValue(v interface{}) *st.Value {
+// ValueProto converts an interface{} to a ptypes.Value
+func ValueProto(v interface{}) *st.Value {
 	switch v := v.(type) {
 	case nil:
 		return nil
