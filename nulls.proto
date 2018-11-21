@@ -21,6 +21,11 @@ message Int {
     bool Valid = 2;
 }
 
+message Int64 {
+    int64 Int64 = 1;
+    bool Valid = 2;
+}
+
 message Time {
     google.protobuf.Timestamp Time = 1;
     bool Valid = 2;
